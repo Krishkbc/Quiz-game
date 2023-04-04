@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: whitesmoke;
+}
+
+.wrapper {
+    display: flex;
+    margin: auto;
+    width: 40%;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    padding: 2rem;
+    border: solid;
+    margin: 0.5rem;
+    flex-direction: column;
+    position: absolute;
+    min-width: 50%;
+    /* justify-content: center; */
+    border-color: purple;
+    border-radius:6rem 0 6rem 0 ;
+}
+
+
+.quiz_header {
+    padding: 1rem;
+    align-items: center;
+}
+
+h1 {
+    color: purple;
+    margin-bottom: 5px;
+    font-size: 60px;
+    font-weight: 500;
+}
+
+.quiz_score {
+    color: purple;
+    font-size: 30px;
+    margin-left: 15px;
+}
+
+.quiz_score {
+    display: flex;
+    justify-content: end;
+}
+
+h2 {
+    color: purple;
+    padding-bottom: 0.5rem;
+}
+
+ol {
+    padding: 1rem;
+}
+
+li {
+    padding: 1rem;
+    font-size: 25px;
+    background-color: purple;
+    color: aliceblue;
+    margin-bottom: 5px;
+    border-radius: 8px 45px 45px 8px;
+    
+}
+
+li:hover {
+    
+    background-color: aliceblue;
+    color: purple;
+    outline: solid;
+    border-color: purple;
+    
+    transition: background-color 1000ms ;
+}
+
+ button:hover {
+    background-color: aliceblue;
+    color: purple;
+    outline: solid;
+    border-color: purple;
+}
+
+.result {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 20px;
+    background-color: purple;
+    color: aliceblue;
+    border: none;
+    border-radius: 20px;
+    margin-top: 0.5rem;
+}
+
