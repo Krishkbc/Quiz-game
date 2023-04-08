@@ -80,7 +80,7 @@ li:hover {
     outline: solid;
     border-color: purple;
     
-    transition: background-color 1000ms ;
+    
 }
 
  button:hover {
@@ -103,5 +103,5 @@ button {
     border: none;
     border-radius: 20px;
     margin-top: 0.5rem;
+    margin-right: 0.5rem;
 }
-
