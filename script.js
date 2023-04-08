@@ -1,15 +1,17 @@
 // https://opentdb.com/api.php?amount=10
 
-const options = document.querySelectorAll('.options');
+const options = document.querySelector('.quiz-options');
 const question = document.querySelector('#question');
 const quiz_body = document.querySelector('.quiz_body');
-const all_option = document.querySelector('.all-option');
-const correct_score = document.querySelector('.quiz_score');
+const correct_score = document.querySelector('.correct-score');
+const total_question = document.querySelector('.total-question');
 
-let _correctAnswer = "", correctScore = askedCount = 0, totalQuestion = 20;
+let _correctAnswer = "", correctScore = askedCount = 0, totalQuestion = 10;
 
-document.addEventListener('DOMContentLoaded', () =>{
+document.addEventListener('DOMContentLoaded', () => {
+    loadquestions();
     correct_score.textContent = correctScore;
+    total_question.textContent = totalQuestion;
 })
 
 async function loadquestions() {
@@ -19,6 +21,9 @@ async function loadquestions() {
     console.log(data.results[0]);
     showQuestion(data.results[0]);
 }
+
+
+
 
 function showQuestion(data) {
     let correctAnswer = data.correct_answer;
@@ -30,20 +35,25 @@ function showQuestion(data) {
     optionList.splice(Math.floor(Math.random() * (incorrectAnswer.length + 1)), 0, correctAnswer);
     console.log(optionList);
     console.log(correctAnswer);
+    
 
-    quiz_body.innerHTML = `<h2 id="question"> ${data.question} </h2>`;
-    //     all_option.innerHTML = `${optionList.map((option, index) => `<li> <p class="option-1 options">${option}</p></li>`)
-    // .join('')}
-    // `;
+    // _question.innerHTML = `${data.question} <br> <span class = "category"> ${data.category} </span>`;
+    question.innerHTML = `${data.question} <br> <span class = "category"> ${data.category} </span>`;
 
-    html = `<li> <p class="option-1 options">${optionList[0]}</p></li>
-<li> <p class="option-1 options">${optionList[1]}</p></li>
-<li> <p class="option-1 options">${optionList[2]}</p></li>
-<li> <p class="option-1 options">${optionList[3]}</p></li>
-`
+    options.innerHTML = `
+    ${optionList.map((option, index) => `
+        <li> ${index + 1}. <span>${option}</span> </li>
+    `).join('')}
+`;
 
-    quiz_body.insertAdjacentHTML('beforeend', html);
+    selectOption();
+
 }
 
-
-loadquestions();
+function selectOption(){
+    options.querySelectorAll('li').forEach(function(option){
+        option.addEventListener('click', function(){
+           console.log('hii')
+        });
+    });
+}
